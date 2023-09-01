@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div class="news-container">
+  <h1>Noticias</h1>
+  <ul class="news-list">
+    <li *ngFor="let noticia of noticias" class="news-item">
+      <h2 class="news-title">{{ noticia.titulo }}</h2>
+      <img *ngIf="noticia.Imagen" [src]="getBase64Image(noticia.Imagen)" alt="{{ noticia.titulo }}" class="news-image">
+      <p class="news-body">{{ noticia.cuerpo }}</p>
+      <p class="news-date">Fecha: {{ noticia.fechaCreacion | date:'medium' }}</p>
+    </li>
+  </ul>
+</div>
